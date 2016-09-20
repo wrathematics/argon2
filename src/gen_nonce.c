@@ -24,27 +24,18 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifndef R_ARGON2_H__
-#define R_ARGON2_H__
 
+#include "common.h"
 
-#include <R.h>
-#include <Rinternals.h>
-#include <stdint.h>
-
-typedef unsigned char uchar_t;
-
-#define CHARPT(x,i)	(CHAR(STRING_ELT(x,i)))
-
-static inline void random_uchars(uint8_t *const x, const size_t xlen)
+SEXP R_gen_nonce(SEXP len_)
 {
-  GetRNGstate();
+  SEXP ret;
+  const size_t len = INTEGER(len_)[0];
   
-  for (int i=0; i<xlen; i++)
-    x[i] = (uint8_t) ((int) 256*unif_rand()); // digit 0-255
+  PROTECT(ret = allocVector(RAWSXP, len));
+  uint8_t *const pt = RAW(ret);
+  random_uchars(pt, len);
+  UNPROTECT(1);
   
-  PutRNGstate();
+  return ret;
 }
-
-
-#endif
