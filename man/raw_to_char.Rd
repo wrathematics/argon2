@@ -4,7 +4,7 @@
 \alias{raw_to_char}
 \title{raw_to_char}
 \usage{
-raw_to_char(raw, upper = TRUE)
+raw_to_char(raw, upper = TRUE, spaces = FALSE)
 }
 \arguments{
 \item{raw}{A raw vector.}

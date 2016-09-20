@@ -21,7 +21,7 @@
 #' @export
 raw_to_char <- function(raw, upper=TRUE, spaces=FALSE)
 {
-  if (typeof(raw) != "raw")
+  if (!is.raw(raw))
     stop("argument 'raw' must be of raw type")
   
   check.is.flag(upper)
