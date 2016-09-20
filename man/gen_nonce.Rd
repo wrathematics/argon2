@@ -4,10 +4,10 @@
 \alias{gen_nonce}
 \title{Generate a nonce}
 \usage{
-gen_nonce(length = 64)
+gen_nonce(length = 128)
 }
 \arguments{
-\item{length}{The number of items to return. Default is 64 items, which
+\item{length}{The number of items to return. Default is 128 items, which
 is 512 hex bits.}
 }
 \value{
