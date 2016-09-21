@@ -21,10 +21,16 @@ library(argon2)
 pass <- "myPassw0rd!"
 hash <- pw_hash(pass)
 hash
+## [1] "$argon2i$v=19$m=8192,t=20,p=1$KZrdgD04xYK158QoZUEJgQb0QgayasYvjl98hRXf5C7cCqDr/MPARFdp4HtnrSrpZr70SupTrfGVfovUp81VeA$V8WHHdR7a4S0RTOFDAjJCHIerlIjzsPAuPu0rT2lpnObmNOUhldPIgEqBzxQBF71tyjsEIuuRMdG/b5JN3omiA"
+## attr(,"hashtype")
+## [1] "argon2"
 
 pw_check(hash, pass)
+## [1] TRUE
 pw_check(hash, "password")
+## [1] FALSE
 pw_check(hash, "1234")
+## [1] FALSE
 ```
 
 
