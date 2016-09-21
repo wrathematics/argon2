@@ -2,7 +2,7 @@
 #' 
 #' A 512-bit blake2b hash implementation.
 #' 
-#' @param str
+#' @param x
 #' Input string.
 #' @param key
 #' An optional key.
