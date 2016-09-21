@@ -11,10 +11,6 @@ License: BSD 2-clause License + file LICENSE
 Copyright: See inst/COPYRIGHTS for files in src/argon2.
 Depends:
     R (>= 3.0.0)
-Suggests: 
-    knitr, 
-    rmarkdown
-VignetteBuilder: knitr
 NeedsCompilation: yes
 ByteCompile: yes
 Authors@R: person("Drew", "Schmidt", role=c("aut", "cre"), email="wrathematics@gmail.com")
