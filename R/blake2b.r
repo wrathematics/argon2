@@ -3,7 +3,7 @@
 #' A 512-bit blake2b hash implementation.
 #' 
 #' @param x
-#' Input string.
+#' Input to be hashed. Can be a single string or a raw vector.
 #' @param key
 #' An optional key.
 #' 
@@ -13,10 +13,10 @@
 #' @export
 blake2b <- function(x, key=NULL)
 {
-  check.is.string(x)
-  check.is.string.or.null(key)
+  if (!is.string(x) && !is.raw(x))
+    stop("argument 'x' must be a single string or a raw vector", call.=FALSE)
+  if (!is.null(key) && !is.string(x) && !is.raw(x))
+    stop("argument 'key' must be NULL, a single string, or a raw vector", call.=FALSE)
   
-  ret <- .Call(R_blake2b, x, key)
-  
-  ret
+  .Call(R_blake2b, x, key)
 }

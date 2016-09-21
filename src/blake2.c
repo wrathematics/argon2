@@ -33,19 +33,55 @@
 SEXP R_blake2b(SEXP in_, SEXP key_)
 {
   SEXP ret;
-  const char *in = CHARPT(in_, 0);
-  const size_t inlen = strlen(in);
+  void *in;
+  size_t inlen;
+  void *key;
+  size_t keylen;
+  
+  switch (TYPEOF(in_))
+  {
+    case STRSXP:
+      in = (void*) CHARPT(in_, 0);
+      inlen = strlen(in);
+      break;
+      
+    case RAWSXP:
+      in = RAW(in_);
+      inlen = LENGTH(in_);
+      break;
+    
+    default:
+      error("");
+  }
+  
+  switch (TYPEOF(key_))
+  {
+    case NILSXP:
+      key = NULL;
+      keylen = 0;
+      break;
+    
+    case STRSXP:
+      key = (void*) CHARPT(key_, 0);
+      keylen = strlen(key);
+      break;
+      
+    case RAWSXP:
+      key = RAW(key_);
+      keylen = LENGTH(key_);
+      break;
+    
+    default:
+      error("");
+  }
+  
+  if (keylen > HASHLEN)
+    error("'key' must have no more than %d elements\n", HASHLEN);
   
   PROTECT(ret = allocVector(RAWSXP, HASHLEN));
   uchar_t *const hash = RAW(ret);
   
-  if (key_ == R_NilValue)
-    blake2b(hash, HASHLEN*sizeof(*hash), in, inlen*sizeof(*in), NULL, 0);
-  else
-  {
-    const char *key = CHARPT(key_, 0);
-    blake2b(hash, HASHLEN*sizeof(*hash), in, inlen, key, strlen(key));
-  }
+  blake2b(hash, HASHLEN, in, inlen, key, keylen);
   
   UNPROTECT(1);
   

@@ -7,7 +7,7 @@
 blake2b(x, key = NULL)
 }
 \arguments{
-\item{x}{Input string.}
+\item{x}{Input to be hashed. Can be a single string or a raw vector.}
 
 \item{key}{An optional key.}
 }
