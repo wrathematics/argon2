@@ -4,11 +4,10 @@
 \alias{gen_nonce}
 \title{Generate a nonce}
 \usage{
-gen_nonce(length = 128)
+gen_nonce(length = 64)
 }
 \arguments{
-\item{length}{The number of items to return. Default is 128 items, which
-is 512 hex bits.}
+\item{length}{The number of elements to return.}
 }
 \value{
 A random raw vector.
