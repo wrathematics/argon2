@@ -5,7 +5,8 @@
 #' @param x
 #' Input to be hashed. Can be a single string or a raw vector.
 #' @param key
-#' An optional key.
+#' An optional key. Should be \code{NULL} (for no key), a single string, or a
+#' raw vector.
 #' 
 #' @return
 #' The hash of the string as a raw vector.
