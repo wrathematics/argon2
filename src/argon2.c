@@ -30,7 +30,7 @@
 
 #define CHECKRET(check) if (check != ARGON2_OK) error("%s\n", argon2_error_message(check))
 
-#define ENTROPY 128 // 64, 128, 256...
+#define ENTROPY 64 // 64, 128, 256...
 #define SALTLEN ENTROPY
 #define HASHLEN ENTROPY
 #define ENCOLEN ENTROPY*4
