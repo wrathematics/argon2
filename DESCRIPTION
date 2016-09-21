@@ -1,8 +1,12 @@
 Package: argon2
 Type: Package
-Title: Secure Password Hashing
+Title: Secure Password Hashing with Argon2
 Version: 0.1-0
-Description: TODO
+Description: Utilities for secure password hashing via the argon2 algorithm.
+    At the time of writing, it is a fairly new hashing algorithm and is believed
+    to be very secure.  The package also includes some utilities that should be
+    useful for digest authentication, including a wrapper of 'blake2b'.  For
+    similar R packages, see sodium and 'bcrypt'.
 License: BSD 2-clause License + file LICENSE
 Copyright: See inst/COPYRIGHTS for files in src/argon2.
 Depends:

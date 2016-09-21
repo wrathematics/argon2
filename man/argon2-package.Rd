@@ -5,7 +5,11 @@
 \alias{argon2-package}
 \title{argon2}
 \description{
-TODO
+Utilities for secure password hashing via the argon2 algorithm.  At the time
+of writing, it is a fairly new hashing algorithm and is believed to be very
+secure.  The package also includes some utilities that should be useful for
+digest authentication, including a wrapper of blake2b.  For similar R
+packages, see sodium and bcrypt.
 }
 \author{
 Drew Schmidt
