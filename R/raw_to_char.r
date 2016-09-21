@@ -8,6 +8,11 @@
 #' A raw vector.
 #' @param upper
 #' Should hex digits A-F be given in uppercase?
+#' @param spaces
+#' Should the str use spaces?
+#' 
+#' @param return
+#' A character string.
 #' 
 #' @examples
 #' library(argon2)

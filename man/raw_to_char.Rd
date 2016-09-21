@@ -10,6 +10,10 @@ raw_to_char(raw, upper = TRUE, spaces = FALSE)
 \item{raw}{A raw vector.}
 
 \item{upper}{Should hex digits A-F be given in uppercase?}
+
+\item{spaces}{Should the str use spaces?}
+
+\item{return}{A character string.}
 }
 \description{
 Convert the literal bytes of a raw (unsigned char*) to a
