@@ -11,7 +11,7 @@
 #' @param spaces
 #' Should the str use spaces?
 #' 
-#' @param return
+#' @return
 #' A character string.
 #' 
 #' @examples
