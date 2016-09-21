@@ -7,7 +7,9 @@
 * **Author:** Drew Schmidt
 
 
-**argon2** is an R package for secure password hashing.  The package includes a source distribution of https://github.com/P-H-C/phc-winner-argon2
+**argon2** is an R package for secure password hashing via the argon2 algorithm.  As of 2015-2016, it is a very new hashing algorithm and is believed to be very secure.  The package also includes some utilities that should be useful for digest authentication, including a wrapper of blake2b.  For similar R packages, see **sodium** and **bcrypt**.
+
+The package includes a source distribution of https://github.com/P-H-C/phc-winner-argon2
 
 
 
