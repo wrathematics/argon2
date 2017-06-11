@@ -14,6 +14,25 @@ The package includes a source distribution of the latest implementation from the
 
 
 
+## Installation
+
+You can install the stable version from CRAN using the usual `install.packages()`:
+
+```r
+install.packages("argon2")
+```
+
+The development version is maintained on GitHub, and can easily be installed by any of the packages that offer installations from GitHub:
+
+```r
+### Pick your preference
+devtools::install_github("wrathematics/argon2")
+ghit::install_github("wrathematics/argon2")
+remotes::install_github("wrathematics/argon2")
+```
+
+
+
 ## Usage
 
 ```r
@@ -32,23 +51,4 @@ pw_check(hash, "password")
 ## [1] FALSE
 pw_check(hash, "1234")
 ## [1] FALSE
-```
-
-
-
-## Installation
-
-<!-- You can install the stable version from CRAN using the usual `install.packages()`:
-
-```r
-install.packages("argon2")
-``` -->
-
-The development version is maintained on GitHub, and can easily be installed by any of the packages that offer installations from GitHub:
-
-```r
-### Pick your preference
-devtools::install_github("wrathematics/argon2")
-ghit::install_github("wrathematics/argon2")
-remotes::install_github("wrathematics/argon2")
 ```
