@@ -56,12 +56,12 @@ SEXP R_raw_to_char(SEXP rawvec_, SEXP upper_, SEXP spaces_)
   PROTECT(ret = allocVector(STRSXP, 1));
   const int retlen = spaces ? encolen-1 : encolen;
   SET_STRING_ELT(ret, 0, mkCharLen(enco, retlen));
-  UNPROTECT(1);
   
   for (int i=0; i<encolen; i++)
     enco[i] = '\0';
   
   free(enco);
   
+  UNPROTECT(1);
   return ret;
 }

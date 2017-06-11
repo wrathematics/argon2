@@ -95,10 +95,10 @@ SEXP R_argon2_hash(SEXP pass_, SEXP type_)
   
   PROTECT(ret = allocVector(STRSXP, 1));
   SET_STRING_ELT(ret, 0, mkChar(enco));
-  UNPROTECT(1);
   
   clearmem();
   
+  UNPROTECT(1);
   return ret;
 }
 

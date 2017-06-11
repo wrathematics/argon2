@@ -84,6 +84,5 @@ SEXP R_blake2b(SEXP in_, SEXP key_)
   blake2b(hash, HASHLEN, in, inlen, key, keylen);
   
   UNPROTECT(1);
-  
   return ret;
 }

@@ -35,7 +35,7 @@ SEXP R_gen_nonce(SEXP len_)
   PROTECT(ret = allocVector(RAWSXP, len));
   uint8_t *const pt = RAW(ret);
   random_uchars(pt, len);
-  UNPROTECT(1);
   
+  UNPROTECT(1);
   return ret;
 }
