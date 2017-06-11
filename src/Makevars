@@ -6,7 +6,7 @@ ARGON2_OBJS = \
 	argon2/thread.o \
 	argon2/ref.o
 
-R_OBJS = argon2.o blake2.o gen_nonce.o raw_to_char.o
+R_OBJS = argon2_native.o argon2.o blake2.o gen_nonce.o raw_to_char.o
 
 OBJECTS = $(ARGON2_OBJS) $(R_OBJS)
 
