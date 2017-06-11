@@ -31,4 +31,3 @@ rawToChar(raw)
 raw_to_char(raw)
 
 }
-

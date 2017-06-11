@@ -11,11 +11,10 @@ secure.  The package also includes some utilities that should be useful for
 digest authentication, including a wrapper of blake2b.  For similar R
 packages, see sodium and bcrypt.
 }
-\author{
-Drew Schmidt
-}
 \references{
 Project URL: \url{https://github.com/wrathematics/argon2}
 }
+\author{
+Drew Schmidt
+}
 \keyword{package}
-

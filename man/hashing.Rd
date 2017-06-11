@@ -2,8 +2,8 @@
 % Please edit documentation in R/argon2.r
 \name{hashing}
 \alias{hashing}
-\alias{pw_check}
 \alias{pw_hash}
+\alias{pw_check}
 \title{Password Hashing}
 \usage{
 pw_hash(pass, type = "i")
@@ -54,4 +54,3 @@ Paper \url{https://eprint.iacr.org/2015/430.pdf}
 
 Source \url{https://github.com/P-H-C/phc-winner-argon2}
 }
-

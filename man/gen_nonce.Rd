@@ -15,4 +15,3 @@ A random raw vector.
 \description{
 Generates a random raw (unsigned char*) vector.
 }
-

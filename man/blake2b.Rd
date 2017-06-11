@@ -18,4 +18,3 @@ The hash of the string as a raw vector.
 \description{
 A 512-bit blake2b hash implementation.
 }
-
