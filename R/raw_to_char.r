@@ -15,6 +15,7 @@
 #' A character string.
 #' 
 #' @examples
+#' \dontrun{
 #' library(argon2)
 #' str <- "some text"
 #' raw <- charToRaw(str)
@@ -22,6 +23,7 @@
 #' 
 #' rawToChar(raw)
 #' raw_to_char(raw)
+#' }
 #' 
 #' @export
 raw_to_char <- function(raw, upper=TRUE, spaces=FALSE)

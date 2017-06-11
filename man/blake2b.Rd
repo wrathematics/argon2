@@ -18,3 +18,18 @@ The hash of the string as a raw vector.
 \description{
 A 512-bit blake2b hash implementation.
 }
+\examples{
+\dontrun{
+
+
+
+
+
+}
+
+}
+\references{
+Aumasson, J.P., Neves, S., Wilcox-O’Hearn, Z. and Winnerlein, C., 2013, June.
+BLAKE2: simpler, smaller, fast as MD5. In International Conference on Applied
+Cryptography and Network Security (pp. 119-135). Springer Berlin Heidelberg.
+}

@@ -26,11 +26,14 @@
 #' the plaintext password matches its hash.
 #' 
 #' @references
-#' Paper \url{https://eprint.iacr.org/2015/430.pdf}
+#' Biryukov, A., Dinu, D. and Khovratovich, D., 2015. Fast and
+#' Tradeoff-Resilient Memory-Hard Functions for Cryptocurrencies and Password
+#' Hashing. IACR Cryptology ePrint Archive, 2015, p.430.
 #' 
-#' Source \url{https://github.com/P-H-C/phc-winner-argon2}
+#' Reference implementation \url{https://github.com/P-H-C/phc-winner-argon2}
 #' 
 #' @examples
+#' \dontrun{
 #' library(argon2)
 #' 
 #' pass <- "myPassw0rd!"
@@ -40,6 +43,7 @@
 #' pw_check(hash, pass)
 #' pw_check(hash, "password")
 #' pw_check(hash, "1234")
+#' }
 #' 
 #' @name hashing
 #' @rdname hashing

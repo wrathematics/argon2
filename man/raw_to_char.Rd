@@ -22,6 +22,7 @@ string representation.  This is different from R's
 \code{rawToChar()}.  See examples for details.
 }
 \examples{
+\dontrun{
 library(argon2)
 str <- "some text"
 raw <- charToRaw(str)
@@ -29,5 +30,6 @@ raw
 
 rawToChar(raw)
 raw_to_char(raw)
+}
 
 }
