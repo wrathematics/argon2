@@ -18,11 +18,9 @@
 #' 
 #' @examples
 #' \dontrun{
-#' 
-#' 
-#' 
-#' 
-#' 
+#' library(argon2)
+#' blake2b("some string")
+#' blake2b("another")
 #' }
 #' 
 #' @export

@@ -49,6 +49,8 @@
 #' @rdname hashing
 NULL
 
+
+
 #' @rdname hashing
 #' @export
 pw_hash <- function(pass, type="i")
@@ -61,6 +63,8 @@ pw_hash <- function(pass, type="i")
   
   hash
 }
+
+
 
 #' @rdname hashing
 #' @export

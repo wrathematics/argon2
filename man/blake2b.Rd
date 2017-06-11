@@ -20,11 +20,9 @@ A 512-bit blake2b hash implementation.
 }
 \examples{
 \dontrun{
-
-
-
-
-
+library(argon2)
+blake2b("some string")
+blake2b("another")
 }
 
 }
