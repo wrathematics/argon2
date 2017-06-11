@@ -1,0 +1,3 @@
+* copy src/* from source release to .
+* copy include/argon2.h from source release to .
+* remove bench.c genkat.c ref.c run.c test.c
