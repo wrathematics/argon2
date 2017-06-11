@@ -1,5 +1,5 @@
-Release 0.1-0 (//):
-  * Add pw_hash() and pw_check()
-  * Add blake2b()
-  * Add raw_to_char()
-  * Add gen_nonce()
+Release 0.1-0:
+  * Added pw_hash() and pw_check()
+  * Added blake2b()
+  * Added raw_to_char()
+  * Added gen_nonce()
