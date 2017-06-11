@@ -3,8 +3,8 @@ ARGON2_OBJS = \
 	argon2/argon2.o \
 	argon2/core.o \
 	argon2/encoding.o \
-	argon2/thread.o \
-	argon2/ref.o
+	argon2/opt.o \
+	argon2/thread.o
 
 R_OBJS = argon2_native.o argon2.o blake2.o gen_nonce.o raw_to_char.o
 
