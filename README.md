@@ -2,7 +2,7 @@
 
 * **Version:** 0.1-0
 * **Status:** [![Build Status](https://travis-ci.org/wrathematics/argon2.png)](https://travis-ci.org/wrathematics/argon2)
-* **License:** [BSD 2-Clause](http://opensource.org/licenses/BSD-2-Clause)
+* **License:** [BSD 2-Clause](https://opensource.org/licenses/BSD-2-Clause)
 * **Author:** Drew Schmidt (wrathematics .AT. gmail .DOT. com)
 * **Project home**: https://github.com/wrathematics/argon2
 * **Bug reports**: https://github.com/wrathematics/argon2/issues
