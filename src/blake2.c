@@ -1,4 +1,4 @@
-/*  Copyright (c) 2016 Drew Schmidt
+/*  Copyright (c) 2016-2017 Drew Schmidt
     All rights reserved.
     
     Redistribution and use in source and binary forms, with or without
@@ -51,7 +51,7 @@ SEXP R_blake2b(SEXP in_, SEXP key_)
       break;
     
     default:
-      error("");
+      error(ERR_IMPOSSIBLE);
   }
   
   switch (TYPEOF(key_))
@@ -72,7 +72,7 @@ SEXP R_blake2b(SEXP in_, SEXP key_)
       break;
     
     default:
-      error("");
+      error(ERR_IMPOSSIBLE);
   }
   
   if (keylen > HASHLEN)

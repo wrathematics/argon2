@@ -1,4 +1,4 @@
-/*  Copyright (c) 2016 Drew Schmidt
+/*  Copyright (c) 2016-2017 Drew Schmidt
     All rights reserved.
     
     Redistribution and use in source and binary forms, with or without
@@ -31,6 +31,8 @@
 #include <R.h>
 #include <Rinternals.h>
 #include <stdint.h>
+
+#define ERR_IMPOSSIBLE "internal error; please alert the R package author(s)"
 
 typedef unsigned char uchar_t;
 

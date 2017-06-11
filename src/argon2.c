@@ -1,4 +1,4 @@
-/*  Copyright (c) 2016 Drew Schmidt
+/*  Copyright (c) 2016-2017 Drew Schmidt
     All rights reserved.
     
     Redistribution and use in source and binary forms, with or without
@@ -70,7 +70,7 @@ static inline int chartype2inttype(const char ctype)
       itype = Argon2_d;
       break;
     default:
-      error("");
+      error(ERR_IMPOSSIBLE);
   }
   
   return itype;
