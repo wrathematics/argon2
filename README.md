@@ -1,10 +1,11 @@
 # argon2
 
 * **Version:** 0.1-0
-* **URL**: https://github.com/wrathematics/argon2
 * **Status:** [![Build Status](https://travis-ci.org/wrathematics/argon2.png)](https://travis-ci.org/wrathematics/argon2)
-* **License:** [![License](http://img.shields.io/badge/license-BSD%202--Clause-orange.svg?style=flat)](http://opensource.org/licenses/BSD-2-Clause)
-* **Author:** Drew Schmidt
+* **License:** [BSD 2-Clause](http://opensource.org/licenses/BSD-2-Clause)
+* **Author:** Drew Schmidt (wrathematics .AT. gmail .DOT. com)
+* **Project home**: https://github.com/wrathematics/argon2
+* **Bug reports**: https://github.com/wrathematics/argon2/issues
 
 
 **argon2** is an R package for secure password hashing via the argon2 algorithm.  It is a relatively new hashing algorithm and is believed to be very secure.  The package also includes some utilities that should be useful for digest authentication, including a wrapper of blake2b.  For similar R packages, see **sodium** and **bcrypt**.
