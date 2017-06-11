@@ -7,11 +7,10 @@
 \description{
 Utilities for secure password hashing via the argon2 algorithm.
 It is a relatively new hashing algorithm and is believed to be very secure.
-The 'argon2' implementation included in the package is a source distribution
-of the official release from the 'argon2' algorithm developers.  The package
-also includes some utilities that should be useful for digest
-authentication, including a wrapper of 'blake2b'.  For similar R packages,
-see sodium and 'bcrypt'.
+The argon2 implementation included in the package is the reference
+implementation.  The package also includes some utilities that should be
+useful for digest authentication, including a wrapper of blake2b.  For
+similar R packages, see sodium and bcrypt.
 }
 \references{
 Project URL: \url{https://github.com/wrathematics/argon2}
