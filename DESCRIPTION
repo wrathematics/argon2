@@ -15,7 +15,7 @@ Depends:
 NeedsCompilation: yes
 ByteCompile: yes
 Authors@R: person("Drew", "Schmidt", role=c("aut", "cre"), email="wrathematics@gmail.com")
-URL: https://github.com/wrathematics/argon2
+URL: https://github.com/wrathematics/argon2 https://en.wikipedia.org/wiki/Argon2
 BugReports: https://github.com/wrathematics/argon2/issues
 Maintainer: Drew Schmidt <wrathematics@gmail.com>
 RoxygenNote: 6.0.1
