@@ -40,11 +40,11 @@ SEXP R_raw_as_char(SEXP rawvec_, SEXP upper_, SEXP spaces_)
   const int rvlen = LENGTH(rawvec_);
   const int spaces = LOGICAL(spaces_)[0];
   const int upper = LOGICAL(upper_)[0];
-  const char *fmt = upper ? "%2.2X" : "%2.2x";
+  const char *const fmt = upper ? "%2.2X" : "%2.2x";
   
   const int factor = spaces ? 3 : 2;
   const int encolen = factor*rvlen;
-  char *enco = malloc(factor*rvlen);
+  char *enco = malloc(factor*rvlen+1);
   if (enco == NULL)
     error("out of memory");
   
