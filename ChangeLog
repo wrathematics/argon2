@@ -1,3 +1,8 @@
+Release 0.2-0:
+  * Added Wikipedia link to DESCRIPTION.
+  * Fixed several memory errors flagged by Valgrind.
+  * Renamed raw_to_char() to raw_as_char().
+
 Release 0.1-0:
   * Added pw_hash() and pw_check()
   * Added blake2b()
