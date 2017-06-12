@@ -1,4 +1,4 @@
-/*  Copyright (c) 2016 Drew Schmidt
+/*  Copyright (c) 2016-2017 Drew Schmidt
     All rights reserved.
     
     Redistribution and use in source and binary forms, with or without
@@ -45,6 +45,8 @@ SEXP R_raw_to_char(SEXP rawvec_, SEXP upper_, SEXP spaces_)
   const int factor = spaces ? 3 : 2;
   const int encolen = factor*rvlen;
   char *enco = malloc(factor*rvlen);
+  if (enco == NULL)
+    error("out of memory");
   
   for (int i=0; i<rvlen; i++)
   {
