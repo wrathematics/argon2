@@ -1,7 +1,7 @@
 Package: argon2
 Type: Package
 Title: Secure Password Hashing
-Version: 0.1-1
+Version: 0.2-0
 Description: Utilities for secure password hashing via the argon2 algorithm.
     It is a relatively new hashing algorithm and is believed to be very secure.
     The 'argon2' implementation included in the package is the reference
