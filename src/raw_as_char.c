@@ -33,7 +33,7 @@
 #include "argon2/blake2/blake2.h"
 
 
-SEXP R_raw_to_char(SEXP rawvec_, SEXP upper_, SEXP spaces_)
+SEXP R_raw_as_char(SEXP rawvec_, SEXP upper_, SEXP spaces_)
 {
   SEXP ret;
   uint8_t *rv = (uint8_t*) RAW(rawvec_);

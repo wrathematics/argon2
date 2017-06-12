@@ -1,4 +1,4 @@
-#' raw_to_char
+#' raw_as_char
 #' 
 #' Convert the literal bytes of a raw (unsigned char*) to a
 #' string representation.  This is different from R's
@@ -22,11 +22,11 @@
 #' raw
 #' 
 #' rawToChar(raw)
-#' raw_to_char(raw)
+#' raw_as_char(raw)
 #' }
 #' 
 #' @export
-raw_to_char <- function(raw, upper=TRUE, spaces=FALSE)
+raw_as_char <- function(raw, upper=TRUE, spaces=FALSE)
 {
   if (!is.raw(raw))
     stop("argument 'raw' must be of raw type")
@@ -34,5 +34,5 @@ raw_to_char <- function(raw, upper=TRUE, spaces=FALSE)
   check.is.flag(upper)
   check.is.flag(spaces)
   
-  .Call(R_raw_to_char, raw, upper, spaces)
+  .Call(R_raw_as_char, raw, upper, spaces)
 }

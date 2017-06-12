@@ -13,7 +13,7 @@
 #' @name argon2-package
 #' 
 #' @useDynLib argon2 R_argon2_hash R_argon2_verify R_gen_nonce
-#'   R_blake2b R_raw_to_char
+#'   R_blake2b R_raw_as_char
 #'
 #' @docType package
 #' @keywords package
