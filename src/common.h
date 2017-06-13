@@ -37,6 +37,7 @@
 typedef unsigned char uchar_t;
 
 #define CHARPT(x,i)	(CHAR(STRING_ELT(x,i)))
+#define INT(x) INTEGER(x)[0]
 
 static inline void random_uchars(uint8_t *const x, const size_t xlen)
 {

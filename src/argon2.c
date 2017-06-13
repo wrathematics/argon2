@@ -39,9 +39,6 @@ uint8_t salt[SALTLEN];
 uint8_t hash[HASHLEN];
 char    enco[ENCOLEN];
 
-#define TIMECOST 20   // Should be more than 10
-#define MEMCOST  8192 // in KiB, so 8MiB
-#define NTHREADS 1    // must be 1 for our windows friends
 #define VERSION  ARGON2_VERSION_13
 
 
@@ -78,7 +75,7 @@ static inline int chartype2inttype(const char ctype)
 
 
 
-SEXP R_argon2_hash(SEXP pass_, SEXP type_)
+SEXP R_argon2_hash(SEXP pass_, SEXP type_, SEXP iterations, SEXP space, SEXP nthreads)
 {
   SEXP ret;
   int check;
@@ -88,8 +85,8 @@ SEXP R_argon2_hash(SEXP pass_, SEXP type_)
   
   random_uchars(salt, SALTLEN);
   
-  check = argon2_hash(TIMECOST, MEMCOST, NTHREADS, pass, passlen, salt, SALTLEN,
-    hash, HASHLEN, enco, ENCOLEN, type, VERSION);
+  check = argon2_hash(INT(iterations), INT(space), INT(nthreads), pass, passlen,
+    salt, SALTLEN, hash, HASHLEN, enco, ENCOLEN, type, VERSION);
   
   CHECKRET(check);
   

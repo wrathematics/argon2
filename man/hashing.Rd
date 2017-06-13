@@ -6,14 +6,22 @@
 \alias{pw_check}
 \title{Password Hashing}
 \usage{
-pw_hash(pass, type = "i")
+pw_hash(pass, variant = "i", iterations = 16, memory = 8, nthreads = 2)
 
 pw_check(hash, pass)
 }
 \arguments{
 \item{pass}{The (plaintext) password.}
 
-\item{type}{Choice of algorithm; choices are "i" and "d".}
+\item{variant}{Choice of algorithm; currently the only supported choices are "i" and "d".}
+
+\item{iterations}{A time cost. Recommended to be at least 10. Can be any integer from 1 to
+2^31 - 1.}
+
+\item{memory}{A memory cost, given in MiB. Recommended to be at least 8.  Can be any
+integer from 1 to 2^21 - 1 (but don't be ridiculous).}
+
+\item{nthreads}{Number of threads.  This affects the speed of hashing, so more is better.}
 
 \item{hash}{The hashed password; this is the output of \code{pw_hash()}.}
 }
@@ -28,14 +36,19 @@ Basic password hashing.  Use \code{pw_hash()} to hash and \code{pw_check()}
 to compare a possible password with the hashed password.
 }
 \details{
-For more hashing options, see the sodium and bcrypt.
+The default options for \code{iterations} and \code{memory} should be
+sufficient for most purposes.  You are encouraged to read the official
+documentation before modifying these values, which can be found here
+\url{https://github.com/P-H-C/phc-winner-argon2/blob/master/argon2-specs.pdf}.
+
+On the other hand, \code{nthreads} is safe to change to fit your available
+resources, and you are encouraged to do so.
 
 
 This uses the argon2 (i or d variety) hash algorithm.  See references for
 details and implementation source code (also bundled with this package).
 
-Our binding uses a 512 bit salt with data generated from MT, a "time cost"
-(number of passes) of 16, "memory cost" of 8192 MiB, and 1 thread.
+Our binding uses a 512 bit salt with data generated from MT.
 }
 \examples{
 \dontrun{
