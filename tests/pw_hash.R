@@ -1,9 +1,16 @@
 library(argon2)
 
-set.seed(1234)
-pass <- "myPassw0rd!"
-hash <- pw_hash(pass)
+test.hash = function(hash, pass)
+{
+  stopifnot(pw_check(hash, pass))
+  stopifnot(!pw_check(hash, "password"))
+}
 
-stopifnot(pw_check(hash, pass))
-stopifnot(!pw_check(hash, "password"))
-stopifnot(!pw_check(hash, "1234"))
+set.seed(1234)
+pass = "myPassw0rd!"
+
+hash = pw_hash(pass, variant="i")
+test.hash(hash, pass)
+
+hash = pw_hash(pass, variant="d")
+test.hash(hash, pass)
