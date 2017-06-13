@@ -42,7 +42,7 @@ static inline void random_uchars(uint8_t *const x, const size_t xlen)
 {
   GetRNGstate();
   
-  for (int i=0; i<xlen; i++)
+  for (size_t i=0; i<xlen; i++)
     x[i] = (uint8_t) ((int) 256*unif_rand()); // digit 0-255
   
   PutRNGstate();
