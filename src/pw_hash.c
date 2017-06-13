@@ -41,18 +41,9 @@ char    enco[ENCOLEN];
 
 #define VERSION  ARGON2_VERSION_13
 
+void secure_wipe_memory(void *v, size_t n);
 
-static inline void clearmem()
-{
-  for (int i=0; i<SALTLEN; i++)
-    salt[i] = 0;
-  
-  for (int i=0; i<HASHLEN; i++)
-    hash[i] = 0;
-  
-  for (int i=0; i<ENCOLEN; i++)
-    enco[i] = '\0';
-}
+
 
 static inline int chartype2inttype(const char ctype)
 {
@@ -93,7 +84,9 @@ SEXP R_argon2_hash(SEXP pass_, SEXP type_, SEXP iterations, SEXP space, SEXP nth
   PROTECT(ret = allocVector(STRSXP, 1));
   SET_STRING_ELT(ret, 0, mkChar(enco));
   
-  clearmem();
+  secure_wipe_memory(salt, SALTLEN*sizeof(*salt));
+  secure_wipe_memory(hash, HASHLEN*sizeof(*hash));
+  secure_wipe_memory(enco, ENCOLEN*sizeof(*enco));
   
   UNPROTECT(1);
   return ret;
