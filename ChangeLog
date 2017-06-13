@@ -1,3 +1,8 @@
+Release 0.3-0:
+  * Changed argument "type" to "variant" in pw_hash().
+  * Expose argon2 secondary inputs to users.
+  * Fixed a bad error message.
+
 Release 0.2-0:
   * Added Wikipedia link to DESCRIPTION.
   * Fixed several memory errors flagged by Valgrind.
