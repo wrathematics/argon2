@@ -1,3 +1,4 @@
+suppressMessages(library(utils))
 library(argon2)
 
 compare = function(test, truth) stopifnot(identical(truth, test))
