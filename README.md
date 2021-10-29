@@ -1,9 +1,7 @@
 # argon2
 
-* **Version:** 0.3-0
-* **Status:** [![Build Status](https://travis-ci.org/wrathematics/argon2.png)](https://travis-ci.org/wrathematics/argon2)
+* **Version:** 0.4-0
 * **License:** [BSD 2-Clause](https://opensource.org/licenses/BSD-2-Clause)
-* **Author:** Drew Schmidt (wrathematics .AT. gmail .DOT. com)
 * **Project home**: https://github.com/wrathematics/argon2
 * **Bug reports**: https://github.com/wrathematics/argon2/issues
 
@@ -22,12 +20,9 @@ You can install the stable version from CRAN using the usual `install.packages()
 install.packages("argon2")
 ```
 
-The development version is maintained on GitHub, and can easily be installed by any of the packages that offer installations from GitHub:
+The development version is maintained on GitHub:
 
 ```r
-### Pick your preference
-devtools::install_github("wrathematics/argon2")
-ghit::install_github("wrathematics/argon2")
 remotes::install_github("wrathematics/argon2")
 ```
 
