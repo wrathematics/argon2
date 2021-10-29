@@ -25,8 +25,11 @@
 */
 
 
-#include "common.h"
 #include "argon2/argon2.h"
+
+#include "common.h"
+#include "random_uchars.h"
+
 
 #define CHECKRET(check) if (check != ARGON2_OK) error("%s\n", argon2_error_message(check))
 

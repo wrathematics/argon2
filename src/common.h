@@ -28,9 +28,10 @@
 #define R_ARGON2_H__
 
 
+#include <stdint.h>
+
 #include <R.h>
 #include <Rinternals.h>
-#include <stdint.h>
 
 #define ERR_IMPOSSIBLE "internal error; please alert the R package author(s)"
 
@@ -38,16 +39,6 @@ typedef unsigned char uchar_t;
 
 #define CHARPT(x,i)	(CHAR(STRING_ELT(x,i)))
 #define INT(x) INTEGER(x)[0]
-
-static inline void random_uchars(uint8_t *const x, const size_t xlen)
-{
-  GetRNGstate();
-  
-  for (size_t i=0; i<xlen; i++)
-    x[i] = (uint8_t) ((int) 256*unif_rand()); // digit 0-255
-  
-  PutRNGstate();
-}
 
 
 #endif

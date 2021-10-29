@@ -1,4 +1,4 @@
-/*  Copyright (c) 2016 Drew Schmidt
+/*  Copyright (c) 2016-2017 Drew Schmidt
     All rights reserved.
     
     Redistribution and use in source and binary forms, with or without
@@ -24,20 +24,23 @@
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#ifndef R_RANDOM_UCHARS_H__
+#define R_RANDOM_UCHARS_H__
 
-#include "common.h"
-#include "random_uchars.h"
+
+#include <R.h>
+#include <Rinternals.h>
 
 
-SEXP R_gen_nonce(SEXP len_)
+static inline void random_uchars(uint8_t *const x, const size_t xlen)
 {
-  SEXP ret;
-  const size_t len = INTEGER(len_)[0];
+  GetRNGstate();
   
-  PROTECT(ret = allocVector(RAWSXP, len));
-  uint8_t *const pt = RAW(ret);
-  random_uchars(pt, len);
+  for (size_t i=0; i<xlen; i++)
+    x[i] = (uint8_t) ((int) 256*unif_rand()); // digit 0-255
   
-  UNPROTECT(1);
-  return ret;
+  PutRNGstate();
 }
+
+
+#endif
