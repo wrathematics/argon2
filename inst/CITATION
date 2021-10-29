@@ -9,16 +9,5 @@ citEntry(
   note = note,
   url = "https://cran.r-project.org/package=argon2",
   textVersion = NULL,
-  key = "getPassPackage"
-)
-
-citEntry(
-  entry = "Manual",
-  title = "Guide to the {argon2} Package",
-  author = personList(as.person("Drew Schmidt")),
-  year = year,
-  note = "{R} Vignette",
-  url = "https://cran.r-project.org/package=argon2",
-  textVersion = NULL,
-  key = "getPassVignette"
+  key = "argon2Package"
 )
