@@ -1852,6 +1852,13 @@ if test -z "${R_HOME}"; then
 fi
 CC=`"${R_HOME}/bin/R" CMD config CC`
 
+
+ac_ext=c
+ac_cpp='$CPP $CPPFLAGS'
+ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ac_compiler_gnu=$ac_cv_c_compiler_gnu
+
 ac_ext=c
 ac_cpp='$CPP $CPPFLAGS'
 ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
@@ -2642,7 +2649,49 @@ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $
 ac_compiler_gnu=$ac_cv_c_compiler_gnu
 
 
-ac_ext=c
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ${CC} __builtin_cpu_init function" >&5
+$as_echo_n "checking for ${CC} __builtin_cpu_init function... " >&6; }
+if ${ax_cv_gcc_check_x86_cpu_init+:} false; then :
+  $as_echo_n "(cached) " >&6
+else
+  if test "$cross_compiling" = yes; then :
+  { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+as_fn_error $? "cannot run test program while cross compiling
+See \`config.log' for more details" "$LINENO" 5; }
+else
+  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <stdlib.h>
+int
+main ()
+{
+__builtin_cpu_init ();
+  ;
+  return 0;
+}
+
+_ACEOF
+if ac_fn_c_try_run "$LINENO"; then :
+  ax_cv_gcc_check_x86_cpu_init=yes
+else
+  ax_cv_gcc_check_x86_cpu_init=no
+fi
+rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+  conftest.$ac_objext conftest.beam conftest.$ac_ext
+fi
+
+fi
+{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ax_cv_gcc_check_x86_cpu_init" >&5
+$as_echo "$ax_cv_gcc_check_x86_cpu_init" >&6; }
+if test "X$ax_cv_gcc_check_x86_cpu_init" = "Xno"; then :
+  CC_IS_GCC="no"
+else
+  CC_IS_GCC="yes"
+fi
+
+if test "X${CC_IS_GCC}" = "Xyes"; then
+  ac_ext=c
 ac_cpp='$CPP $CPPFLAGS'
 ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
 ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
@@ -2886,10 +2935,16 @@ fi
 
 
 
-if test "X${HAS_AVX512F}" = "Xno" -a "X${HAS_AVX2}" = "Xno" -a "X${HAS_SSE2}" = "Xno"; then
-  FILL_IMPL="ref.o"
+  if test "X${HAS_AVX512F}" = "Xno" -a "X${HAS_AVX2}" = "Xno" -a "X${HAS_SSE2}" = "Xno"; then
+    FILL_IMPL="ref.o"
+  else
+    FILL_IMPL="opt.o"
+  fi
 else
-  FILL_IMPL="opt.o"
+  HAS_AVX512F="unknown - couldn't find gcc"
+  HAS_AVX2="${HAS_AVX512F}"
+  HAS_SSE2="${HAS_AVX512F}"
+  FILL_IMPL="ref.o"
 fi
 
 echo " "
