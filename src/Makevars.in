@@ -1,4 +1,4 @@
-PKG_CFLAGS = $(SHLIB_OPENMP_CFLAGS) -I./argon2
+PKG_CFLAGS = $(SHLIB_OPENMP_CFLAGS) -I./argon2 @ADDL_CFLAGS@
 PKG_LIBS = $(SHLIB_OPENMP_CFLAGS)
 
 ARGON2_OBJS = \
@@ -17,11 +17,8 @@ R_OBJS = \
 	raw_as_char.o
 
 OBJECTS = $(ARGON2_OBJS) $(R_OBJS)
-
 all: $(SHLIB)
-
 $(SHLIB): $(OBJECTS) 
-
 
 clean:
 	rm -rf *.o *.so *.dll 

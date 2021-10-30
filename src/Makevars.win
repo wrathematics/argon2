@@ -17,11 +17,8 @@ R_OBJS = \
 	raw_as_char.o
 
 OBJECTS = $(ARGON2_OBJS) $(R_OBJS)
-
 all: $(SHLIB)
-
 $(SHLIB): $(OBJECTS) 
-
 
 clean:
 	rm -rf *.o *.so *.dll 
