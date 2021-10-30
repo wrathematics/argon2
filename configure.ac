@@ -5,7 +5,7 @@ m4_include([tools/ax_gcc_x86_cpu_supports.m4])
 
 
 AC_ARG_ENABLE(vec,
-  AC_HELP_STRING([--enable-vec], [Enable vectorized optimizations.]),
+  AS_HELP_STRING([--enable-vec],[Enable vectorized optimizations.]),
   [USE_VEC="yes"], [USE_VEC="no"]
 )
 
