@@ -1,7 +1,7 @@
 # argon2
 
-* **Version:** 0.4-0
-* **License:** [BSD 2-Clause](https://opensource.org/licenses/BSD-2-Clause)
+* **Version:** 0.4-1
+* **License:** [BSD 2-Clause](https://opensource.org/license/bsd-2-clause/)
 * **Project home**: https://github.com/wrathematics/argon2
 * **Bug reports**: https://github.com/wrathematics/argon2/issues
 
