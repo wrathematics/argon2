@@ -50,9 +50,9 @@ SEXP R_raw_as_char(SEXP rawvec_, SEXP upper_, SEXP spaces_)
   
   for (int i=0; i<rvlen; i++)
   {
-    sprintf(enco + factor*i, fmt, rv[i]);
+    snprintf(enco + factor*i, encolen, fmt, rv[i]);
     if (spaces)
-      sprintf(enco + factor*i + 2, " ");
+      snprintf(enco + factor*i + 2, encolen, " ");
   }
   
   PROTECT(ret = allocVector(STRSXP, 1));
